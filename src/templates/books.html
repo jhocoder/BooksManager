@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+{% block title %}
+Books
+{% endblock %}
+
+{% block body %}
+<h1>GESTIONAR MIS LIBROS</h1>
+<a href="/logout"><button>Cerrar Sesion</button></a>
+
+<form action="" method="POST">
+    <h2>Agrega al inventario de libros</h2>
+    <input type="text" placeholder="Nombre del libro" name="nombre">
+    <input type="text" placeholder="Nombre de Categoria" id="categoria" name="categoria">
+    <input type="text" placeholder="Ingresa el Autor del libro" name="autor">
+    <a href="/books"><button type="submit">Agregar</button></a>
+</form>
+<div>
+    <h1>Mis libros</h1>
+    <ul>
+        {% for libro in libros%}
+            <li> 
+             <span>Nombre:  {{ libro[1] }}</span>
+             <span>Categoria:  {{ libro[2] }}</span>
+             <span>Autor:  {{ libro[3] }}</span>   
+             <div style="display: flex; gap: 2px;">
+                <form action="/edit/{{ libro[0] }}" method="GET">
+                    <button>Editar</button>
+                </form> 
+               <form action="/delete/{{ libro[0] }}" method="POST">
+                <button>Eliminar</button>
+               </form>
+             </div> 
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %} 

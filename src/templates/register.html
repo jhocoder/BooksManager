@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+    <h1>Registrate </h1>
+    <form action="" method="POST">
+        <input type="text" id="email" name="email" placeholder="Ingresa tu email">
+        <input type="text" id="password" name="password" placeholder="Ingresa tu password">
+        <input type="text" name="phone" id="phone" placeholder="Ingresa tu numero telefonico">
+        <button type="submit">Registrar</button>
+    </form>
+    <p>Ya tienes cuenta?</p><a href="/login">Inicia Sesion</a>
+{% endblock %} 

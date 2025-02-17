@@ -1,0 +1,18 @@
+{% extends "./base.html" %}
+{% block title %}
+Edit Form
+{% endblock %}
+
+{% block body %}
+    <h1>Edita tu libro</h1>
+    <p>{{ libro }}</p>
+    <form action="/edit/{{ libro[0] }}" method="POST">
+        <label for="">Nombre:</label>
+        <input type="text" value="{{ libro[1] }}" name="nombre">
+        <label for="">Categoria:</label>
+        <input type="text" value="{{ libro[2] }}" name="categoria">
+        <label for="">Autor:</label>
+        <input type="text" value="{{ libro[3] }}" name="autor">
+        <button type="submit">Guardar Datos</button>
+    </form>
+{% endblock %} 

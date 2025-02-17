@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% block title %}
+Recuperar Contraseña
+{% endblock %}
+
+{% block body %}
+    <h1>RECUPERA TU CONTRASEÑA - INGRESA TU EMAIL</h1>
+    <form action="/recovery" method="POST">
+        <input type="text" id="email" name="email" placeholder="Ingresa tu email">
+        <button type="submit">Enviar Correo</button>
+    </form>
+{% endblock %} 

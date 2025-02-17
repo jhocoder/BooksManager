@@ -1,0 +1,4 @@
+.env
+.tokenMail
+*env
+__pycache__
